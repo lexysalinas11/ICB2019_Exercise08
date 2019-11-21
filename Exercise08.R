@@ -35,6 +35,11 @@ for(i in 2:length(MSU$score)){
 #Double check equality 
 sum(MSU$score) == tail(MSU$total,n=1)
 
+#Use this to plot instead of the chuck below
+a=ggplot(data=UW,aes(x=time,y=total))+xlab("Time (minutes)")+ylab("Total Points")+
+  geom_line(aes(x=time,y=total),colour="darkgreen")+ geom_line(data=MSU,aes(x=time,y=total),colour="firebrick")+theme_minimal()+labs(title="UW vs MSU")
+a
+
 #Plot
 plot(total ~ time,data=UW,type='l',col='darkgreen', xlab=c("Time (minutes)"), ylab=c("Total Points"))
 lines(total ~ time,data=MSU,col ='firebrick')
