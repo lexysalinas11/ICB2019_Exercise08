@@ -53,9 +53,9 @@ guessmynum<-function(){
 }
 
 play<-function(){
-  guess<- -100
-  while(guess != num){ 
-    guess<-game()
+  guessmynum<- -100
+  while(guessmynum != num){ 
+    guess<-guessmynum()
     if (guess == num) #says that if the guess equals valid number... 
     {
       cat("Yahoo! You win!", num, "is right!\n") #we get a winning message
