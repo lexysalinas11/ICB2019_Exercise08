@@ -1,4 +1,5 @@
-#code for 8.1
+#Alexa Salinas and Camille Mosley (TA: John Huber)
+#Exercise 8
 
 library(ggplot2)
 #move game data to environment
@@ -38,29 +39,8 @@ a=ggplot(data=UW,aes(x=time,y=total))+xlab("Time (minutes)")+ylab("Total Points"
   geom_line(aes(x=time,y=total),colour="darkgreen")+ geom_line(data=MSU,aes(x=time,y=total),colour="firebrick")+theme_minimal()+labs(title="UW vs MSU")
 a
 
-#make guess my number game 
-Guessmynumber <- function(x){
-  num <- x
-if (num > sample(1:100)) {
-  print("Lower")
-} else {
-  print("Higher")
-} else {
-  print("Correct!")
-  }
-}
-Guessmynumber(50)
-
-#example of how I want code above to function
-x <- 5
-if(x > sample(1:100)){
-  print("Lower")
-} else {
-  print("Higher")
-}
-
 #new code
-game<-function(){ 
+guessmynum<-function(){ 
   n<-readline(prompt="Guess number between 1 and 100: ") #read lines from input
   n<-as.numeric(n) #creates vector with length equal to n
   if((as.numeric(n)>0)&(as.numeric(n)<=100)){ #specifies # greater than 0 but less than 100
@@ -68,7 +48,7 @@ game<-function(){
   }
   else{
     cat("Number must be between 1 and 100!")
-    return(game()) #returns function defined for game variable
+    return(guessmynum()) #returns function defined for game variable
   }
 }
 
@@ -88,9 +68,9 @@ play<-function(){
     {
       cat("Try again, sweetie. Too high. \n")
     }
-  }
+  } 
 }
 
 #code for playing game
-num<-round(runif(1)*100)
+num<-sample(runif(1)*100)
 play()
