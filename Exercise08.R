@@ -45,8 +45,16 @@ if (num > sample(1:100)) {
   print("Lower")
 } else {
   print("Higher")
-} else 
+} else {
   print("Correct!")
+  }
 }
-
 Guessmynumber(50)
+
+#example of how I want code above to function
+x <- 5
+if(x > sample(1:100)){
+  print("Lower")
+} else {
+  print("Higher")
+}
