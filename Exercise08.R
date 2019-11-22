@@ -72,5 +72,5 @@ play<-function(){
 }
 
 #code for playing game
-num<-sample(runif(1)*100)
+num<-round(runif(1)*100)
 play()
